@@ -1,3 +1,4 @@
+# import Post, PostsConnection, Place, PlacesConnection,PageInfo,PlaceEdge,AggregatePlace from "./prisma-client/prisma.graphql"
 
 type Query {
   publishedPosts: [Post!]!
