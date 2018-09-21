@@ -1,0 +1,47 @@
+type User {
+  id: ID! @unique
+  email: String @unique
+  name: String!
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID! @unique
+  title: String!
+  published: Boolean! @default(value: "false")
+  author: User
+}
+
+
+
+  scalar Date
+
+  type Picture {
+    id: ID! @unique
+    url: String!
+  }
+  type Place {
+    id: ID! @unique
+    name: String
+    # size: PLACE_SIZES
+    shortDescription: String!
+    description: String!
+    slug: String!
+    maxGuests: Int!
+    numBedrooms: Int!
+    numBeds: Int!
+    numBaths: Int!
+    # reviews: [Review!]!
+    # amenities: Amenities!
+    # host: User!
+    # pricing: Pricing!
+    # location: Location!
+    # views: Views!
+    # guestRequirements: GuestRequirements
+    # policies: Policies
+    # houseRules: HouseRules
+    # bookings: [Booking!]!
+    pictures: [Picture!]!
+    # popularity: Int!
+  }
+
