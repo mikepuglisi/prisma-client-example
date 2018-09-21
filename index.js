@@ -9,6 +9,14 @@ const resolvers = {
     post(root, args, context) {
       return context.prisma.post({ id: args.postId })
     },
+    postsConnection(root, args, context) {
+      return context.prisma.postsConnection({ })
+      // return context.prisma.postsConnection({ }, `{
+      //   aggregate {
+      //     count
+      //   }
+      // }`)
+    },
     postsByUser(root, args, context) {
       return context.prisma.user({
         id: args.userId

@@ -1,9 +1,10 @@
-# import Post, PostsConnection, Place, PlacesConnection,PageInfo,PlaceEdge,AggregatePlace from "./prisma-client/prisma.graphql"
+# import Post, PostConnection from "./prisma-client/prisma.graphql"
 
 type Query {
   publishedPosts: [Post!]!
   post(postId: ID!): Post
   postsByUser(userId: ID!): [Post!]!
+  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
 }
 
 type Mutation {
